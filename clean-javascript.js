@@ -1,12 +1,12 @@
 //* Nomenclature rules
-//? 2- Names without technical information
-    // Avoid names related with its technology
-    // (data types, class, function)
-    // this where we're developing vertical code related with bussiness logic
-    // when we're coding for example libraries, this is not strictly neccesary
+//? 3- Use ubiquitous language
+    // Use common language that experts are using
+    // and define common terms for a team
 
 // Not recommended
-const arrayNames = ['Jonathan', 'Mariana', 'Eduardo'];
+getUserInfo();
+getClientData();
+getCustomerRecord();
 
 // Recommended
-const namesList = ['Jonathan', 'Mariana', 'Eduardo'];
+getUser()
