@@ -5,12 +5,12 @@ var name = 'Jona';
 let name = 'Eduardo';
 const PI = 3.14159;
 
-//var usage
-var age = 28;
+//let usage
+let age = 28;
 
 {
-    console.log('Value inside block', age); //> 28
-    var age = 29;
+    let age = 29;
+    console.log('Value inside block', age); //> error, age doesn't exist here
 }
 
 console.log('Value outside block', age); //> 29
