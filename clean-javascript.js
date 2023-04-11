@@ -1,10 +1,12 @@
 //* Nomenclature rules
-//? 1- Pronounceable and expressive names
-    // Preferable in English and using camelCase
-    // Avoiding hyphens(-), underscores(_) and abbr.
+//? 2- Names without technical information
+    // Avoid names related with its technology
+    // (data types, class, function)
+    // this where we're developing vertical code related with bussiness logic
+    // when we're coding for example libraries, this is not strictly neccesary
 
 // Not recommended
-const yyyymmdstr = moment().format('YYYY/MM/DD');
+const arrayNames = ['Jonathan', 'Mariana', 'Eduardo'];
 
 // Recommended
-const currentDate = moment().format('YYYY/MM/DD');
+const namesList = ['Jonathan', 'Mariana', 'Eduardo'];
