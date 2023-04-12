@@ -1,13 +1,30 @@
-//* Lexical Scope
-const age = 28;
+//* Hoisting
+/* var greet = 'Hello';
 
-function printAge() {
-    console.log(age);
+(
+    function() {
+        console.log(greet); //> undefined
+        var greet = 'Hi';
+        console.log(greet); //> Hi
+    }
+)(); */
+
+var greet = 'Hello';
+
+(
+    function() {
+        var greet;
+        console.log(greet); //> undefined
+        var greet = 'Hi';
+        console.log(greet); //> Hi
+    }
+)();
+
+/* 
+function greet() {
+    let greeting = 'Hello world!';
+    console.log(greeting);
 }
 
-function mainApp() {
-    const age = 26;
-    printAge();
-}
-
-mainApp(); //> 28
+greet(); //>
+ */
