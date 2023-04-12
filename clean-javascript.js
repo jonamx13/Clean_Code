@@ -1,9 +1,13 @@
-//* Block Scope
-{
-    let greeting = 'Hello World!';
-    var lang = 'English';
-    console.log('greeting from block',greeting);
+//* Lexical Scope
+const age = 28;
+
+function printAge() {
+    console.log(age);
 }
 
-console.log('Language outside block', lang); //> English
-console.log(greeting); //> ReferenceError: greeting is not defined
+function mainApp() {
+    const age = 26;
+    printAge();
+}
+
+mainApp(); //> 28
