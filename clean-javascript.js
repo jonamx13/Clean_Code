@@ -1,9 +1,9 @@
-//* Local Scope
-
-function greet() {
-    let greeting = 'Hello World';
-    console.log('Greeting from function',greeting);
+//* Block Scope
+{
+    let greeting = 'Hello World!';
+    var lang = 'English';
+    console.log('greeting from block',greeting);
 }
 
-greet(); //> Hello World!
-console.log(greeting); // error: var is not defined
+console.log('Language outside block', lang); //> English
+console.log(greeting); //> ReferenceError: greeting is not defined
