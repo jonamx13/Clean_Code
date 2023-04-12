@@ -1,30 +1,15 @@
-//* Hoisting
-/* var greet = 'Hello';
+//* Functions
 
-(
-    function() {
-        console.log(greet); //> undefined
-        var greet = 'Hi';
-        console.log(greet); //> Hi
-    }
-)(); */
-
-var greet = 'Hello';
-
-(
-    function() {
-        var greet;
-        console.log(greet); //> undefined
-        var greet = 'Hi';
-        console.log(greet); //> Hi
-    }
-)();
-
-/* 
-function greet() {
-    let greeting = 'Hello world!';
-    console.log(greeting);
+// Function declaration
+function getResult() {
+    return 'Results';
 }
 
-greet(); //>
- */
+getResult() //> return Results
+
+// function expression
+const getResult = function() {
+    return 'Results';
+};
+
+getResult();
