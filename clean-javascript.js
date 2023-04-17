@@ -1,43 +1,17 @@
-//* Reduced Size (Single-responsibility principle)
+//* DRY Principle (Don't Repeat Yourself)
+const jonaAverage = (90 + 50 + 70) / 3;
+const alexAverage = (80 + 90 + 70 + 80) / 4;
+const candanceAverage = (40 + 100) / 2;
 
-class UserAuth {
-    constructor(user) {
-        this.user = user;
-    }
+console.log(jonaAverage, alexAverage, candanceAverage);
 
-    verifyCredentials() {
-        return false;
-    }
+
+function getAverage(...grades) {
+    return grades.reduce((prev, current) => prev + current, 0) / grades.length;
 }
 
-class UserSettings extends UserAuth {
-    constructor(user, settings) {
-        super(user);
-        this.settings = settings;
-    }
+const jonaAverage2 = getAverage(90, 50, 70);
+const alexAverage2 = getAverage(80, 90, 70, 80);
+const candanceAverage2 = getAverage(40, 100);
 
-    changeSetting(settings) {
-        if (this.verifyCredentials()) {
-            console.log('Can modify its settings');
-        } else {
-            console.log('It has not access');
-        }
-    }
-}
-
-const newAccess = new UserSettings('Jona', 'Dark Mode');
-newAccess.changeSetting();
-
-// class UserSettings {
-//     constructor(user, settings) {
-//         this.user = user;
-//         this.settings = settings;
-//     }
-
-//     changeSettings(settings) {
-//         if (this.verifyCredentials()) {
-//         }
-//     }
-
-//     verifyCredentials() {}
-// }
+console.log(jonaAverage2, alexAverage2, candanceAverage2);
