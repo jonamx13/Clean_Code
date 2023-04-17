@@ -1,35 +1,28 @@
-//* Arrow Functions and 'this'
-const getResult = () => 'Results Jona';
+//* Before ES6
+function Person(name) {
+    this.name = name;
+}
 
-console.log(getResult());
+Person.prototype.greet = function() {
+    return 'Hello I am ' + this.name;
+}
 
-// Without arrow
-[1, 2, 3].map(function (n) {
-    return n * 2;
-});
+var person = new Person('Jonathan');
+console.log(person.name);
+console.log(person.greet());
 
-// With arrow
-[1, 2, 3].map((n) => n * 2);
 
-// With 'this'
-const counterNormal = {
-    number: 0,
-    increase() {
-        setInterval(() => console.log(++this.number) , 1000) 
+//* With ES6
+class Cat {
+    constructor(cat) {
+        this.name = cat;
+    }
+
+    greet() {
+        return `Hello, I am a cat and my name is ${this.name}`
     }
 }
 
-counterNormal.increase();
-
-// Without 'this'
-
-const counterThis = {
-    number: 0,
-    increase() {
-        setInterval(function() {
-            console.log(++this.number);
-        }.bind(this), 1000) // bind method
-    }
-}
-
-counterThis.increase();
+const cat = new Cat('Oliver')
+console.log(cat.name);
+console.log(cat.greet());
